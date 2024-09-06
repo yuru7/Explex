@@ -16,7 +16,7 @@ Explex は、[0xProto](https://github.com/0xType/0xProto) と、 [IBM Plex Sans 
 
 以下の特徴を備えています。
 
-- コーディングなどの小さなサイズで表示するシーンに最適化された 0xProto 由来のラテン文字
+- 文字形を崩さない控えめなリガチャやテクスチャーヒーリングに対応、コーディングシーンに最適化された 0xProto 由来のラテン文字
 - IBM社が提供する IBM Plex Sans JP 由来の読み易い日本語文字
 - 記号類グリフの豊富な [Hack](https://github.com/source-foundry/Hack) を追加合成することで記号の不足を補完
 - 全角スペースの可視化
