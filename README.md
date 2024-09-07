@@ -1,8 +1,8 @@
 # Explex
 
-Explex は、[0xProto](https://github.com/0xType/0xProto) と、 [IBM Plex Sans JP](https://github.com/IBM/plex) を合成した、プログラミング向けフォントです。
+Explex は、[0xProto](https://github.com/0xType/0xProto) と [IBM Plex Sans JP](https://github.com/IBM/plex) を合成した、プログラミング向けフォントです。
 
-日本語グリフが含まれていない 0xProto を日本語文書でも扱いやすくしつつ等幅フォント化することを目指しました。
+日本語グリフが含まれていない 0xProto を日本語文書でも扱いやすくし、半角1:全角2 比率の等幅フォント化することを目指しました。
 
 [👉 ダウンロード](https://github.com/yuru7/Explex/releases/latest)  
 ※「Assets」内の zip ファイルをダウンロードしてご利用ください。
