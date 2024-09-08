@@ -78,8 +78,6 @@ def add_hinting(input_font_path, output_font_path):
         "none",
         "-S",
         "-W",
-        "-X",
-        "",
         "-I",
         input_font_path,
         output_font_path,
