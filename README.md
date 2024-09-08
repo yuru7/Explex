@@ -1,8 +1,8 @@
 # Explex
 
-Explex は、[0xProto](https://github.com/0xType/0xProto) と、 [IBM Plex Sans JP](https://github.com/IBM/plex) を合成した、プログラミング向けフォントです。
+Explex は、[0xProto](https://github.com/0xType/0xProto) と [IBM Plex Sans JP](https://github.com/IBM/plex) を合成した、プログラミング向けフォントです。
 
-日本語グリフが含まれていない 0xProto を日本語文書でも扱いやすくすることを目指しています。
+日本語グリフが含まれていない 0xProto を日本語文書でも扱いやすくし、半角1:全角2 比率の等幅フォント化することを目指しました。
 
 [👉 ダウンロード](https://github.com/yuru7/Explex/releases/latest)  
 ※「Assets」内の zip ファイルをダウンロードしてご利用ください。
@@ -16,7 +16,7 @@ Explex は、[0xProto](https://github.com/0xType/0xProto) と、 [IBM Plex Sans 
 
 以下の特徴を備えています。
 
-- コーディングなどの小さい文字サイズで表示するシーンに最適化された 0xProto 由来のラテン文字
+- 文字形を崩さない控えめなリガチャやテクスチャーヒーリングに対応、コーディングシーンに最適化された 0xProto 由来のラテン文字
 - IBM社が提供する IBM Plex Sans JP 由来の読み易い日本語文字
 - 記号類グリフの豊富な [Hack](https://github.com/source-foundry/Hack) を追加合成することで記号の不足を補完
 - 全角スペースの可視化
@@ -28,14 +28,14 @@ Explex は、[0xProto](https://github.com/0xType/0xProto) と、 [IBM Plex Sans 
 | :------------:          | :---     |
 | **Explex** | 文字幅比率「半角1:全角2」の通常版の Explex。主にASCIIコードの英数字記号に 0xProto の字体を使い、その他の日本語文字や記号類に IBM Plex Sans JP を使っている。 |
 | **Explex Console** | 0xProto の字体を除外せずに全て適用したフォントファミリー。さらに追加合成した Hack に含まれる矢印記号など多くの記号が半角で表示されるため、コンソールでの利用や記号類は可能な限り半角で表示したい人にオススメ。 |
-| **Explex35** | 通常版の Explex の文字幅比率を「半角3:全角5」にしたフォントファミリー。英数字が通常版の Explex よりも広く余裕をもって表示される。 |
+| **Explex35** | 0xProto オリジナルのグリフサイズを維持して「半角3:全角5」の幅にしたフォントファミリー。英数字が通常版の Explex よりも広く余裕をもって表示される。 |
 | **Explex35 Console** | Explex Console の文字幅比率を 半角3:全角5 にしたフォントファミリー |
 
 ## 表示サンプル
 
 | 通常版 (幅比率 半角1:全角2) | 35版 (幅比率 半角3:全角5) |
 | :---: | :---: |
-|  |  |
+| ![image](https://github.com/user-attachments/assets/54caeaf4-92ba-4a56-ada2-c2210db09b22) | ![image](https://github.com/user-attachments/assets/c818cee7-5d03-4e8f-b449-d6978ab64a18) |
 
 ## ビルド
 
