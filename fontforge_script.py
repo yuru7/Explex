@@ -78,6 +78,11 @@ def main():
         eng_style="Regular",
         merged_style="Regular",
     )
+
+    if options.get("debug"):
+        # デバッグモードの場合はここで終了
+        return
+
     # Italic スタイルを生成する
     generate_font(
         jp_style="Text",
@@ -129,6 +134,8 @@ def get_options():
             options["console"] = True
         elif arg == "--nerd-font":
             options["nerd-font"] = True
+        elif arg == "--debug":
+            options["debug"] = True
         else:
             options["unknown-option"] = True
             return
