@@ -50,7 +50,7 @@ Copyright 2018 Source Foundry Authors https://github.com/source-foundry/Hack
 [Nerd Fonts]
 Copyright (c) 2014, Ryan L McIntyre https://ryanlmcintyre.com
 
-[explex]
+[Explex]
 Copyright 2024 Yuko Otawara
 """  # noqa: E501
 
