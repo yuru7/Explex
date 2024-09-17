@@ -11,8 +11,8 @@ Remove-Item -Path .\build -Recurse -Force
 
 # 並列処理内で、処理が重いNerd Fontsのビルドを優先して処理する
 $option_and_output_folder = @(
-    # @("--console --nerd-font", "ConsoleNF-"), # ビルド コンソール用 通常版 + Nerd Fonts
-    # @("--console --35 --nerd-font", "35ConsoleNF-"), # ビルド コンソール用 3:5幅版 + Nerd Fonts
+    @("--console --nerd-font", "ConsoleNF-"), # ビルド コンソール用 通常版 + Nerd Fonts
+    @("--console --35 --nerd-font", "35ConsoleNF-"), # ビルド コンソール用 3:5幅版 + Nerd Fonts
     @("", "-"), # ビルド 通常版
     @("--35", "35-"), # ビルド 3:5幅版
     @("--console", "Console-"), # ビルド コンソール用 通常版
@@ -32,7 +32,7 @@ $option_and_output_folder | Foreach-Object -ThrottleLimit 4 -Parallel {
 
 $move_file_src_dest = @(
     @("Explex*NF*-*.ttf", "Explex_NF_$version", "NF"),
-    @("Explex*HS*-*.ttf", "Explex_HS_$version", "HS"),
+    # @("Explex*HS*-*.ttf", "Explex_HS_$version", "HS"),
     @("Explex*-*.ttf", "Explex_$version", "")
 )
 
