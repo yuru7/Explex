@@ -192,6 +192,10 @@ def generate_font(jp_style, eng_style, merged_style, italic=False):
     # GPOSもおまけに削除
     remove_lookups(jp_font)
 
+    # 罫線を全角にする
+    if not options.get("console"):
+        make_box_drawing_full_width(eng_font, jp_font)
+
     # 全角スペースを可視化する
     if not options.get("hidden-zenkaku-space"):
         visualize_zenkaku_space(jp_font)
@@ -522,9 +526,9 @@ def delete_not_console_glyphs(eng_font):
     eng_font.selection.select(("less", "unicode"), 0x2219)
     eng_font.selection.select(("less", "unicode"), 0x25D8)
     eng_font.selection.select(("less", "unicode"), 0x25E6)
-    # 結合文音記号は IBM Plex Mono を適用
+    # 結合文音記号は英語フォントを適用
     eng_font.selection.select(("less", "unicode", "ranges"), 0x0300, 0x0328)
-    # IBM Plex Sans JP 等幅化対策 (IBM Plex Mono を適用して半角化)
+    # IBM Plex Sans JP 等幅化対策 (英語フォントを適用して半角化)
     eng_font.selection.select(("less", "unicode"), 0xAB)
     eng_font.selection.select(("less", "unicode"), 0xBB)
     # flaction slash
@@ -778,6 +782,32 @@ def scale_glyph(glyph, scale_x, scale_y):
         )
     )
     glyph.width = original_width
+
+
+def make_box_drawing_full_width(eng_font, jp_font):
+    """罫線を全角にする"""
+    # 英語フォント側は完全に削除
+    eng_font.selection.select(("unicode", "ranges"), 0x2500, 0x257F)
+    for glyph in eng_font.selection.byGlyphs:
+        glyph.clear()
+    eng_font.selection.none()
+    # 日本語フォント側は削除してから全角用グリフをマージする
+    jp_font.selection.select(("unicode", "ranges"), 0x2500, 0x257F)
+    for glyph in jp_font.selection.byGlyphs:
+        glyph.clear()
+    jp_font.selection.none()
+    jp_font.mergeFonts(fontforge.open(f"{SOURCE_FONTS_DIR}/FullWidthBoxDrawings.sfd"))
+    # 幅を設定し位置調整
+    width_to = jp_font[0x3042].width
+    jp_font.selection.select(("unicode", "ranges"), 0x2500, 0x257F)
+    for glyph in jp_font.selection.byGlyphs:
+        width_from = glyph.width
+        glyph.transform(psMat.translate((width_to - width_from) / 2, 0))
+        glyph.width = width_to
+        # 幅が調整前より広がっている場合は拡大する
+        if width_from < width_to:
+            scale_glyph(glyph, width_to / width_from, 1)
+    jp_font.selection.none()
 
 
 def visualize_zenkaku_space(jp_font):
